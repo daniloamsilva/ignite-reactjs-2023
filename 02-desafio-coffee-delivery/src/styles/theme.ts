@@ -16,5 +16,7 @@ export const theme = {
   'base-input': '#EDEDED',
   'base-card': '#F3F2F2',
   background: '#FAFAFA',
+
   white: '#FFFFFF',
+  black: '#574F4D',
 }
