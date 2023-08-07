@@ -46,6 +46,7 @@ export const Actions = styled.div`
     border-radius: 6px;
     background-color: ${(props) => props.theme['yellow-light']};
     position: relative;
+    border: none;
 
     svg {
       color: ${(props) => props.theme['yellow-dark']};

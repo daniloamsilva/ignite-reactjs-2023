@@ -55,3 +55,16 @@ export const Item = styled.div<ItemProps>`
     }
   }
 `
+
+export const CoffeeList = styled.div`
+  h2 {
+    font-size: 2rem;
+  }
+
+  ul {
+    margin-top: 3.38rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem 2rem;
+  }
+`

@@ -24,4 +24,8 @@ export const GlobalStyle = createGlobalStyle`
     color: ${(props) => props.theme['base-title']};
     font-family: 'Baloo 2', sans-serif;
   }
+
+  button {
+    cursor: pointer;
+  }
 `

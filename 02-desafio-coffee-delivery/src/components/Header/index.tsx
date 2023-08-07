@@ -13,10 +13,10 @@ export function Header() {
           <MapPin size={22} weight="fill" />
           <span>São José dos Campos, SP</span>
         </div>
-        <div id="cart">
+        <button id="cart">
           <ShoppingCart size={22} weight="fill" />
           <span id="counter">3</span>
-        </div>
+        </button>
       </Actions>
     </Container>
   )

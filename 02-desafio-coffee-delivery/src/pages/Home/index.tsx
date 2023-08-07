@@ -1,7 +1,8 @@
 import { ShoppingCart, Timer, Package, Coffee } from 'phosphor-react'
 
 import Cup from '../../assets/cup.png'
-import { Container, Item, Items, Title } from './styles'
+import { CoffeeList, Container, Item, Items, Title } from './styles'
+import { CoffeeCard } from '../../components/CoffeCard'
 
 export function Home() {
   return (
@@ -47,7 +48,26 @@ export function Home() {
         </div>
       </Container>
 
-      <h2>Nossos cafés</h2>
+      <CoffeeList>
+        <h2>Nossos cafés</h2>
+
+        <ul>
+          <CoffeeCard.Catalog />
+          <CoffeeCard.Catalog />
+          <CoffeeCard.Catalog />
+          <CoffeeCard.Catalog />
+          <CoffeeCard.Catalog />
+          <CoffeeCard.Catalog />
+          <CoffeeCard.Catalog />
+          <CoffeeCard.Catalog />
+          <CoffeeCard.Catalog />
+          <CoffeeCard.Catalog />
+          <CoffeeCard.Catalog />
+          <CoffeeCard.Catalog />
+          <CoffeeCard.Catalog />
+          <CoffeeCard.Catalog />
+        </ul>
+      </CoffeeList>
     </>
   )
 }
