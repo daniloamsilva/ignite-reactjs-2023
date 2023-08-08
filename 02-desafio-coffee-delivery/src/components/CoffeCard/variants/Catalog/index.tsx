@@ -1,6 +1,7 @@
 import { ShoppingCart } from 'phosphor-react'
 import { Container, Details, Footer, Tags } from './styles'
 import { Counter } from '../../Counter'
+import { Link } from 'react-router-dom'
 
 export function Catalog() {
   return (
@@ -24,9 +25,9 @@ export function Catalog() {
         </span>
         <div className="actions">
           <Counter />
-          <button id="cartButton">
+          <Link to="/checkout" id="cartButton">
             <ShoppingCart size={22} weight="fill" />
-          </button>
+          </Link>
         </div>
       </Footer>
     </Container>
