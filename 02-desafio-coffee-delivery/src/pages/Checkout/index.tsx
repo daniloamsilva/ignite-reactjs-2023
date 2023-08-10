@@ -1,7 +1,16 @@
-import { CurrencyDollar, MapPin } from 'phosphor-react'
+import { useState } from 'react'
+import { CurrencyDollar, MapPin, CreditCard, Bank, Money } from 'phosphor-react'
+
 import { Container, FormOrder, SelectedCoffees } from './styles'
+import { RadioButton } from '../../components/RadioButton'
 
 export function Checkout() {
+  const [selectedPayment, setSelectedPayment] = useState('')
+
+  const handlePaymentChange = (value: string) => {
+    setSelectedPayment(value)
+  }
+
   return (
     <Container>
       <FormOrder>
@@ -59,6 +68,32 @@ export function Checkout() {
               </p>
             </div>
           </header>
+          <div id="payment">
+            <RadioButton
+              label="CARTÃO DE CRÉDITO"
+              name="payment"
+              htmlFor="creditCard"
+              icon={<CreditCard size={16} weight="regular" />}
+              selected={selectedPayment}
+              onChange={handlePaymentChange}
+            />
+            <RadioButton
+              label="CARTÃO DE DÉBITO"
+              name="payment"
+              htmlFor="debitCard"
+              icon={<Bank size={16} weight="regular" />}
+              selected={selectedPayment}
+              onChange={handlePaymentChange}
+            />
+            <RadioButton
+              label="DINHEIRO"
+              name="payment"
+              htmlFor="money"
+              icon={<Money size={16} weight="regular" />}
+              selected={selectedPayment}
+              onChange={handlePaymentChange}
+            />
+          </div>
         </div>
       </FormOrder>
       <SelectedCoffees>

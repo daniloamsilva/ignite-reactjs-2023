@@ -86,6 +86,14 @@ export const FormOrder = styled.div`
     svg {
       color: ${(props) => props.theme.purple};
     }
+
+    #payment {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.75rem;
+      align-self: stretch;
+    }
   }
 
   .form-section {
