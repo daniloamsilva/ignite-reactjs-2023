@@ -5,19 +5,20 @@ export const Container = styled.form`
   align-items: flex-start;
   gap: 2rem;
   margin: 2.5rem 0;
+
+  h3 {
+    margin-bottom: 0.95rem;
+  }
 `
 
 export const FormOrder = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
   width: 40rem;
 
-  h3 {
-    margin-bottom: 0.95rem;
-  }
-
   #first-section {
+    margin-bottom: 0.75rem;
+
     header {
       display: flex;
       align-items: flex-start;
@@ -121,4 +122,67 @@ export const FormOrder = styled.div`
 
 export const SelectedCoffees = styled.div`
   width: 28rem;
+
+  #coffeeList {
+    display: flex;
+    width: 28rem;
+    padding: 2.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+
+    border-radius: 6px 44px;
+    background: ${(props) => props.theme['base-card']};
+  }
+`
+
+export const Divider = styled.hr`
+  align-self: stretch;
+  border-top: 1px solid ${(props) => props.theme['base-button']};
+`
+
+export const Results = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.75rem;
+  align-self: stretch;
+
+  p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+
+    span.label {
+      font-size: 0.875rem;
+    }
+
+    &.total span {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+  }
+`
+
+export const SubmitButton = styled.button`
+  display: flex;
+  padding: 0.75rem 0.5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+  align-self: stretch;
+  border: none;
+  border-radius: 6px;
+  background: ${(props) => props.theme.yellow};
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  line-height: 160%;
+  font-weight: 700;
+  color: ${(props) => props.theme.white};
+
+  &:hover {
+    background: ${(props) => props.theme['yellow-dark']};
+  }
 `

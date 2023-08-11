@@ -12,6 +12,7 @@ export const Container = styled.label<ContainerProps>`
   flex: 1 0 0;
   border-radius: 6px;
   background: ${(props) => props.theme['base-button']};
+  border: 1px solid transparent;
   position: relative;
   cursor: pointer;
 

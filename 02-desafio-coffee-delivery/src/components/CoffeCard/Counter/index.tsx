@@ -4,11 +4,11 @@ import { Minus, Plus } from 'phosphor-react'
 export function Counter() {
   return (
     <Container>
-      <button>
+      <button type="button">
         <Minus size={15} />
       </button>
       <span>1</span>
-      <button>
+      <button type="button">
         <Plus size={15} />
       </button>
     </Container>
