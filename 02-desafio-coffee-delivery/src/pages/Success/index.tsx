@@ -1,12 +1,12 @@
 import { MapPin, Timer, CurrencyDollar } from 'phosphor-react'
 
-import { Container, Header, OrderInfo, Section } from './styles'
+import { Wrapper, Header, OrderInfo, Section } from './styles'
 import DeliveryImage from '../../assets/delivery.png'
 import { Badge } from '../../components/Badge'
 
 export function Success() {
   return (
-    <Container>
+    <Wrapper>
       <Header>
         <h3>Uhu! Pedido confirmado</h3>
         <p className="subtitle">
@@ -55,6 +55,6 @@ export function Success() {
           <img src={DeliveryImage} alt="Homem em uma moto" />
         </div>
       </Section>
-    </Container>
+    </Wrapper>
   )
 }

@@ -1,9 +1,9 @@
-import { Container } from './styles'
+import { Wrapper } from './styles'
 import { Minus, Plus } from 'phosphor-react'
 
 export function Counter() {
   return (
-    <Container>
+    <Wrapper>
       <button type="button">
         <Minus size={15} />
       </button>
@@ -11,6 +11,6 @@ export function Counter() {
       <button type="button">
         <Plus size={15} />
       </button>
-    </Container>
+    </Wrapper>
   )
 }

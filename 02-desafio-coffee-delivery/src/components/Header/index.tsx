@@ -1,13 +1,13 @@
 import { MapPin, ShoppingCart } from 'phosphor-react'
 
-import { Actions, Container } from './styles'
+import { Wrapper, Actions } from './styles'
 
 import Logo from '../../assets/logo.png'
 import { Link } from 'react-router-dom'
 
 export function Header() {
   return (
-    <Container>
+    <Wrapper>
       <Link to="/">
         <img src={Logo} alt="" />
       </Link>
@@ -21,6 +21,6 @@ export function Header() {
           <span id="counter">3</span>
         </Link>
       </Actions>
-    </Container>
+    </Wrapper>
   )
 }

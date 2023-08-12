@@ -4,7 +4,7 @@ interface ContainerProps {
   checked: boolean
 }
 
-export const Container = styled.label<ContainerProps>`
+export const Wrapper = styled.label<ContainerProps>`
   display: flex;
   padding: 1rem;
   align-items: center;

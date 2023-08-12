@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { CurrencyDollar, MapPin, CreditCard, Bank, Money } from 'phosphor-react'
 
 import {
-  Container,
+  Wrapper,
   Divider,
   FormOrder,
   Results,
@@ -20,7 +20,7 @@ export function Checkout() {
   }
 
   return (
-    <Container>
+    <Wrapper>
       <FormOrder>
         <h3>Complete seu pedido</h3>
         <div id="first-section" className="form-section">
@@ -135,6 +135,6 @@ export function Checkout() {
           <SubmitButton type="submit">Confirmar Pedido</SubmitButton>
         </div>
       </SelectedCoffees>
-    </Container>
+    </Wrapper>
   )
 }

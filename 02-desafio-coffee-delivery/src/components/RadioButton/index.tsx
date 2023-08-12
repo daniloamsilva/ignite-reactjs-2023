@@ -1,4 +1,4 @@
-import { Container } from './styles'
+import { Wrapper } from './styles'
 
 interface RadioButtonProps {
   label: string
@@ -24,7 +24,7 @@ export function RadioButton({
   }
 
   return (
-    <Container checked={isChecked} htmlFor={htmlFor}>
+    <Wrapper checked={isChecked} htmlFor={htmlFor}>
       <input
         type="radio"
         name={name}
@@ -35,6 +35,6 @@ export function RadioButton({
       />
       {icon}
       <span>{label}</span>
-    </Container>
+    </Wrapper>
   )
 }

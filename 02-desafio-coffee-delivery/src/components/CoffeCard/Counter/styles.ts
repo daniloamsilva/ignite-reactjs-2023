@@ -1,6 +1,6 @@
 import { styled } from 'styled-components'
 
-export const Container = styled.div`
+export const Wrapper = styled.div`
   display: flex;
   height: 2.375rem;
   padding: 0.5rem;

@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom'
 
-import { Container } from './styles'
+import { Wrapper } from './styles'
 
 export function ErrorPage() {
   return (
-    <Container>
+    <Wrapper>
       <h1>Oops!</h1>
       <p>Desculpe, um erro inesperado aconteceu.</p>
       <Link to={'/'}>Voltar para a página inicial</Link>
-    </Container>
+    </Wrapper>
   )
 }

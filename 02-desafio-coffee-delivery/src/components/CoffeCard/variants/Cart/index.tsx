@@ -1,11 +1,11 @@
 import { Trash } from 'phosphor-react'
 
 import { Counter } from '../../Counter'
-import { Container, Info, Price, RemoveButton } from './styles'
+import { Wrapper, Info, Price, RemoveButton } from './styles'
 
 export function Cart() {
   return (
-    <Container>
+    <Wrapper>
       <Info>
         <img src="./coffees/Americano.png" alt="Americano" />
         <div id="details">
@@ -20,6 +20,6 @@ export function Cart() {
         </div>
       </Info>
       <Price>R$ 9,90</Price>
-    </Container>
+    </Wrapper>
   )
 }

@@ -1,6 +1,6 @@
 import { styled } from 'styled-components'
 
-export const Container = styled.form`
+export const Wrapper = styled.form`
   display: flex;
   align-items: flex-start;
   gap: 2rem;

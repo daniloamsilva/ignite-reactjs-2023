@@ -1,11 +1,11 @@
 import { ShoppingCart } from 'phosphor-react'
-import { Container, Details, Footer, Tags } from './styles'
+import { Wrapper, Details, Footer, Tags } from './styles'
 import { Counter } from '../../Counter'
 import { Link } from 'react-router-dom'
 
 export function Catalog() {
   return (
-    <Container>
+    <Wrapper>
       <img src="./coffees/Americano.png" alt="Americano" />
 
       <Tags>
@@ -30,6 +30,6 @@ export function Catalog() {
           </Link>
         </div>
       </Footer>
-    </Container>
+    </Wrapper>
   )
 }
