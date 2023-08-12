@@ -4,6 +4,7 @@ import { DefaultLayout } from './layouts/DefaultLayout'
 import { ErrorPage } from './pages/ErrorPage'
 import { Home } from './pages/Home'
 import { Checkout } from './pages/Checkout'
+import { Success } from './pages/Success'
 
 export const Router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ export const Router = createBrowserRouter([
       {
         path: '/checkout',
         element: <Checkout />,
+      },
+      {
+        path: '/success',
+        element: <Success />,
       },
     ],
   },
