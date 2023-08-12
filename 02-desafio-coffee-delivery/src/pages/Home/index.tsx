@@ -1,8 +1,9 @@
 import { ShoppingCart, Timer, Package, Coffee } from 'phosphor-react'
 
 import Cup from '../../assets/cup.png'
-import { CoffeeList, Container, Item, Items, Title } from './styles'
+import { CoffeeList, Container, Items, Title } from './styles'
 import { CoffeeCard } from '../../components/CoffeCard'
+import { Badge } from '../../components/Badge'
 
 export function Home() {
   return (
@@ -17,30 +18,38 @@ export function Home() {
             </p>
           </Title>
           <Items>
-            <Item color="yellow-dark">
-              <div className="icon">
+            <Badge.Container>
+              <Badge.Icon color="yellow-dark">
                 <ShoppingCart weight="fill" size={16} />
-              </div>
-              Compra simples e segura
-            </Item>
-            <Item color="black">
-              <div className="icon">
+              </Badge.Icon>
+              <Badge.Infos>
+                <p>Compra simples e segura</p>
+              </Badge.Infos>
+            </Badge.Container>
+            <Badge.Container>
+              <Badge.Icon color="black">
                 <Package weight="fill" size={16} />
-              </div>
-              Embalagem mantém o café intacto
-            </Item>
-            <Item color="yellow">
-              <div className="icon">
+              </Badge.Icon>
+              <Badge.Infos>
+                <p>Embalagem mantém o café intacto</p>
+              </Badge.Infos>
+            </Badge.Container>
+            <Badge.Container>
+              <Badge.Icon color="yellow">
                 <Timer weight="fill" size={16} />
-              </div>
-              Entrega rápida e rastreada
-            </Item>
-            <Item color="purple">
-              <div className="icon">
+              </Badge.Icon>
+              <Badge.Infos>
+                <p>Entrega rápida e rastreada</p>
+              </Badge.Infos>
+            </Badge.Container>
+            <Badge.Container>
+              <Badge.Icon color="purple">
                 <Coffee weight="fill" size={16} />
-              </div>
-              O café chega fresquinho até você
-            </Item>
+              </Badge.Icon>
+              <Badge.Infos>
+                <p>O café chega fresquinho até você</p>
+              </Badge.Infos>
+            </Badge.Container>
           </Items>
         </div>
         <div id="image">

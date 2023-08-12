@@ -1,7 +1,8 @@
 import { MapPin, Timer, CurrencyDollar } from 'phosphor-react'
 
-import { Item, Container, Header, OrderInfo, Section } from './styles'
+import { Container, Header, OrderInfo, Section } from './styles'
 import DeliveryImage from '../../assets/delivery.png'
+import { Badge } from '../../components/Badge'
 
 export function Success() {
   return (
@@ -15,39 +16,39 @@ export function Success() {
       <Section>
         <div id="firstColumn">
           <OrderInfo>
-            <Item color="purple">
-              <div className="icon">
+            <Badge.Container>
+              <Badge.Icon color="purple">
                 <MapPin weight="fill" size={16} />
-              </div>
-              <div className="itemInfos">
+              </Badge.Icon>
+              <Badge.Infos>
                 <p>
                   Entrega em <strong>Rua João Daniel Martinelli, 102</strong>
                 </p>
                 <p>Farrapos - Porto Alegre, RS</p>
-              </div>
-            </Item>
-            <Item color="yellow">
-              <div className="icon">
+              </Badge.Infos>
+            </Badge.Container>
+            <Badge.Container>
+              <Badge.Icon color="yellow">
                 <Timer weight="fill" size={16} />
-              </div>
-              <div className="itemInfos">
+              </Badge.Icon>
+              <Badge.Infos>
                 <p>Previsão de entrega</p>
                 <p>
                   <strong>20 min - 30 min</strong>
                 </p>
-              </div>
-            </Item>
-            <Item color="yellow-dark">
-              <div className="icon">
+              </Badge.Infos>
+            </Badge.Container>
+            <Badge.Container>
+              <Badge.Icon color="yellow-dark">
                 <CurrencyDollar weight="fill" size={16} />
-              </div>
-              <div className="itemInfos">
+              </Badge.Icon>
+              <Badge.Infos>
                 <p>Pagamento na entrega</p>
                 <p>
                   <strong>Cartão de Crédito</strong>
                 </p>
-              </div>
-            </Item>
+              </Badge.Infos>
+            </Badge.Container>
           </OrderInfo>
         </div>
         <div>
