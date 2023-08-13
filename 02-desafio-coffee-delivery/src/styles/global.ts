@@ -28,4 +28,25 @@ export const GlobalStyle = createGlobalStyle`
   button {
     cursor: pointer;
   }
+  
+  /* Medium devices (landscape tablets, 768px and down) */
+  @media only screen and (max-width: 768px) {
+    * {
+      font-size: 80%
+    }
+  }
+
+  /* Large devices (laptops/desktops, 768px and up) */
+  @media only screen and (min-width: 768px) {
+    * {
+      font-size: 90%
+    }
+  }
+
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1200px) {
+    * {
+      font-size: 100%
+    }
+  }
 `

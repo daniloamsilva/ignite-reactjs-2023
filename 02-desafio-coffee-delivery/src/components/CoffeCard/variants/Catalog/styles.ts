@@ -5,7 +5,6 @@ export const Wrapper = styled.li`
   flex-direction: column;
   align-items: center;
 
-  width: 16rem;
   flex-shrink: 0;
 
   border-radius: 6px 36px;
