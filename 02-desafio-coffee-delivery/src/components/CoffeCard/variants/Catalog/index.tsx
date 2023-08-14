@@ -15,7 +15,7 @@ export function Catalog() {
       </Tags>
 
       <Details>
-        <h3>Expresso Cremoso</h3>
+        <h4>Expresso Cremoso</h4>
         <p>O tradicional café feito com água quente e grãos moídos</p>
       </Details>
 

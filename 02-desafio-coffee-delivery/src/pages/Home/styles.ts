@@ -32,10 +32,6 @@ export const Title = styled.div`
   max-width: 40rem;
   margin: 0 auto;
 
-  h1 {
-    font-size: 3rem;
-  }
-
   p {
     font-size: 1.25rem;
     color: ${(props) => props.theme['base-subtitle']};
@@ -79,11 +75,6 @@ export const CoffeeList = styled.div`
     /* Large devices (laptops/desktops, 992px and up) */
     @media only screen and (min-width: 992px) {
       grid-template-columns: repeat(4, 1fr);
-    }
-
-    /* Extra large devices (large laptops and desktops, 1200px and up) */
-    @media only screen and (min-width: 1200px) {
-      /* grid-template-columns: repeat(4, 1fr); */
     }
   }
 `

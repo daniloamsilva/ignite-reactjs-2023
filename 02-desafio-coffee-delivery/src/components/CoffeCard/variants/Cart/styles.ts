@@ -2,7 +2,7 @@ import { styled } from 'styled-components'
 
 export const Wrapper = styled.div`
   display: flex;
-  width: 23rem;
+  width: 100%;
   padding: 0.5rem 0.25rem;
   justify-content: space-between;
   align-items: flex-start;
@@ -17,7 +17,6 @@ export const Info = styled.div`
 
   img {
     width: 4rem;
-    height: 4rem;
     flex-shrink: 0;
   }
 
@@ -28,6 +27,7 @@ export const Info = styled.div`
     gap: 0.5rem;
 
     span {
+      font-size: 1rem;
       color: ${(props) => props.theme['base-subtitle']};
     }
 
@@ -40,6 +40,7 @@ export const Info = styled.div`
 `
 
 export const Price = styled.span`
+  font-size: 1rem;
   color: ${(props) => props.theme['base-text']};
   font-weight: 700;
 `
