@@ -28,6 +28,32 @@ export const GlobalStyle = createGlobalStyle`
   button {
     cursor: pointer;
   }
+
+  /* Typography */
+  h1 { /* Title XL */
+    font-size: 3rem;
+    font-weight: 800;
+  }
+
+  h2 { /* Title L */
+    font-size: 2rem;
+    font-weight: 800;
+  }
+
+  h3 { /* Title M */
+    font-size: 1.5rem;
+    font-weight: 800;
+  }
+
+  h4 { /* Title S */
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+  h5 { /* Title XS */
+    font-size: 1.125rem;
+    font-weight: 700;
+  }
   
   /* Medium devices (landscape tablets, 768px and down) */
   @media only screen and (max-width: 768px) {
