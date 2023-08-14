@@ -14,6 +14,7 @@ export const Wrapper = styled.label<ContainerProps>`
   background: ${(props) => props.theme['base-button']};
   border: 1px solid transparent;
   position: relative;
+  width: 100%;
   cursor: pointer;
 
   ${(props) =>
@@ -33,7 +34,7 @@ export const Wrapper = styled.label<ContainerProps>`
   }
 
   span {
-    font-size: 0.75rem;
+    font-size: 0.65rem;
     line-height: 160%;
   }
 `

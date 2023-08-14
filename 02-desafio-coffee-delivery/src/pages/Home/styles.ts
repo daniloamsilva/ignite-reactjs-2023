@@ -1,22 +1,36 @@
 import { styled } from 'styled-components'
 
 export const Wrapper = styled.div`
-  display: flex;
-  margin-top: 5.88rem;
-  margin-bottom: 6.75rem;
-  justify-content: space-between;
+  margin: 5.88rem 0 6.75rem 0;
+  display: grid;
+  grid-template-columns: 36.75rem 1fr;
+  gap: 2rem;
+
+  img {
+    width: 100%;
+  }
+
+  @media only screen and (max-width: 1030px) {
+    grid-template-columns: 1fr;
+    gap: 0;
+
+    img {
+      display: none;
+    }
+
+    body {
+      background-color: red;
+    }
+  }
 `
 
 export const Title = styled.div`
   display: flex;
-  width: 36.75rem;
   flex-direction: column;
   align-items: flex-start;
   gap: 1rem;
-
-  h1 {
-    font-size: 3rem;
-  }
+  max-width: 40rem;
+  margin: 0 auto;
 
   p {
     font-size: 1.25rem;
@@ -25,10 +39,11 @@ export const Title = styled.div`
 `
 
 export const Items = styled.div`
-  margin-top: 4.12rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   row-gap: 1.25rem;
+  max-width: 40rem;
+  margin: 3rem auto 0;
 `
 
 export const CoffeeList = styled.div`
@@ -41,5 +56,25 @@ export const CoffeeList = styled.div`
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2.5rem 2rem;
+
+    /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 600px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    /* Small devices (portrait tablets and large phones, 600px and up) */
+    @media only screen and (min-width: 600px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Medium devices (landscape tablets, 768px and up) */
+    @media only screen and (min-width: 768px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 `

@@ -4,8 +4,8 @@ export const Wrapper = styled.li`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0 1rem;
 
-  width: 16rem;
   flex-shrink: 0;
 
   border-radius: 6px 36px;
@@ -42,7 +42,6 @@ export const Details = styled.div`
   gap: 0.5rem;
 
   h3 {
-    font-size: 1.25rem;
     color: ${(props) => props.theme['base-subtitle']};
   }
 

@@ -22,7 +22,7 @@ export function Checkout() {
   return (
     <Wrapper>
       <FormOrder>
-        <h3>Complete seu pedido</h3>
+        <h5>Complete seu pedido</h5>
         <div id="first-section" className="form-section">
           <header>
             <MapPin size={22} />
@@ -110,7 +110,7 @@ export function Checkout() {
         </div>
       </FormOrder>
       <SelectedCoffees>
-        <h3>Cafés selecionados</h3>
+        <h5>Cafés selecionados</h5>
 
         <div id="coffeeList">
           <CoffeeCard.Cart />

@@ -1,20 +1,23 @@
 import { styled } from 'styled-components'
 
 export const Wrapper = styled.form`
-  display: flex;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: 57% 1fr;
   gap: 2rem;
   margin: 2.5rem 0;
 
-  h3 {
+  h5 {
     margin-bottom: 0.95rem;
+  }
+
+  @media (max-width: 1200px) {
+    grid-template-columns: 1fr;
   }
 `
 
 export const FormOrder = styled.div`
   display: flex;
   flex-direction: column;
-  width: 40rem;
 
   #first-section {
     margin-bottom: 0.75rem;
@@ -54,19 +57,19 @@ export const FormOrder = styled.div`
         width: 100%;
 
         .col-1 {
-          width: 3.75rem;
+          width: 16.66%;
         }
 
         .col-2 {
-          width: 12.5rem;
+          width: 33.32%;
         }
 
         .col-3 {
-          width: 17.25rem;
+          width: 50%;
         }
 
         .col-4 {
-          width: 21.75rem;
+          width: 66.64%;
         }
 
         .col-6 {
@@ -94,6 +97,11 @@ export const FormOrder = styled.div`
       align-items: center;
       gap: 0.75rem;
       align-self: stretch;
+
+      @media (max-width: 540px) {
+        flex-direction: column;
+        gap: 1rem;
+      }
     }
   }
 
@@ -121,11 +129,8 @@ export const FormOrder = styled.div`
 `
 
 export const SelectedCoffees = styled.div`
-  width: 28rem;
-
   #coffeeList {
     display: flex;
-    width: 28rem;
     padding: 2.5rem;
     flex-direction: column;
     align-items: flex-start;
@@ -157,6 +162,10 @@ export const Results = styled.div`
 
     span.label {
       font-size: 0.875rem;
+    }
+
+    span {
+      font-size: 1rem;
     }
 
     &.total span {

@@ -8,7 +8,7 @@ export function Success() {
   return (
     <Wrapper>
       <Header>
-        <h3>Uhu! Pedido confirmado</h3>
+        <h2>Uhu! Pedido confirmado</h2>
         <p className="subtitle">
           Agora é só aguardar que logo o café chegará até você
         </p>
