@@ -5,6 +5,8 @@ import { Wrapper, CoffeeList, Items, Title } from './styles'
 import { CoffeeCard } from '../../components/CoffeCard'
 import { Badge } from '../../components/Badge'
 
+import { coffees } from '../../coffees'
+
 export function Home() {
   return (
     <>
@@ -61,20 +63,9 @@ export function Home() {
         <h2>Nossos cafés</h2>
 
         <ul>
-          <CoffeeCard.Catalog />
-          <CoffeeCard.Catalog />
-          <CoffeeCard.Catalog />
-          <CoffeeCard.Catalog />
-          <CoffeeCard.Catalog />
-          <CoffeeCard.Catalog />
-          <CoffeeCard.Catalog />
-          <CoffeeCard.Catalog />
-          <CoffeeCard.Catalog />
-          <CoffeeCard.Catalog />
-          <CoffeeCard.Catalog />
-          <CoffeeCard.Catalog />
-          <CoffeeCard.Catalog />
-          <CoffeeCard.Catalog />
+          {coffees.map((coffee) => (
+            <CoffeeCard.Catalog key={coffee.id} coffee={coffee} />
+          ))}
         </ul>
       </CoffeeList>
     </>

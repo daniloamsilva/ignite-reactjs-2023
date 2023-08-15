@@ -7,7 +7,7 @@ export function Counter() {
       <button type="button">
         <Minus size={15} />
       </button>
-      <span>1</span>
+      <span>0</span>
       <button type="button">
         <Plus size={15} />
       </button>
