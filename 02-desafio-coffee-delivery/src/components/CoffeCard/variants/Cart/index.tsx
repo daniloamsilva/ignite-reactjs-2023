@@ -9,7 +9,7 @@ export function Cart() {
       <Info>
         <img src="./coffees/Americano.png" alt="Americano" />
         <div id="details">
-          <span>Expresso Tradicional</span>
+          <span id="name">Expresso Tradicional</span>
           <div id="actions">
             <Counter />
             <RemoveButton type="button">

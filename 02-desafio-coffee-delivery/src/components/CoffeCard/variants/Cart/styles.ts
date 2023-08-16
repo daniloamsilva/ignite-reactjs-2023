@@ -26,7 +26,7 @@ export const Info = styled.div`
     align-items: flex-start;
     gap: 0.5rem;
 
-    span {
+    #name {
       font-size: 1rem;
       color: ${(props) => props.theme['base-subtitle']};
     }

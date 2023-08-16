@@ -7,6 +7,7 @@ export const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
+  font-size: 1rem;
 
   border-radius: 6px;
   background: ${(props) => props.theme['base-button']};
