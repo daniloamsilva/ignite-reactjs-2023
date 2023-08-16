@@ -62,6 +62,8 @@ export const Actions = styled.div`
       background: ${(props) => props.theme['yellow-dark']};
       color: ${(props) => props.theme.white};
       font-size: 0.75rem;
+      font-weight: 700;
+      text-align: center;
 
       position: absolute;
       right: -0.5rem;

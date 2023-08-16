@@ -1,14 +1,21 @@
+import { useContext } from 'react'
 import { ShoppingCart } from 'phosphor-react'
+import { Link } from 'react-router-dom'
+
 import { Wrapper, Details, Footer, Tags } from './styles'
 import { Counter } from '../../Counter'
-import { Link } from 'react-router-dom'
 import { Coffee } from '../../../../coffees'
+import { CartContext } from '../../../../contexts/CartContext'
 
 interface CatalogProps {
   coffee: Coffee
 }
 
 export function Catalog({ coffee }: CatalogProps) {
+  const { cart } = useContext(CartContext)
+
+  const quantity = cart.find((item) => item.id === coffee.id)?.quantity
+
   return (
     <Wrapper>
       <img src={`./coffees/${coffee.image}`} alt={coffee.name} />
@@ -32,7 +39,7 @@ export function Catalog({ coffee }: CatalogProps) {
           </strong>
         </span>
         <div className="actions">
-          <Counter />
+          <Counter id={coffee.id} quantity={quantity ?? 0} />
           <Link to="/checkout" id="cartButton">
             <ShoppingCart size={22} weight="fill" />
           </Link>

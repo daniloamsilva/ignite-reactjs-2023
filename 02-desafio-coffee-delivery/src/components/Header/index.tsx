@@ -1,11 +1,15 @@
+import { useContext } from 'react'
 import { MapPin, ShoppingCart } from 'phosphor-react'
-
-import { Wrapper, Actions } from './styles'
-
-import Logo from '../../assets/logo.png'
 import { Link } from 'react-router-dom'
 
+import { Wrapper, Actions } from './styles'
+import Logo from '../../assets/logo.png'
+import { CartContext } from '../../contexts/CartContext'
+
 export function Header() {
+  const { cart } = useContext(CartContext)
+  const total = cart.reduce((acc, coffee) => acc + coffee.quantity, 0)
+
   return (
     <Wrapper>
       <Link to="/">
@@ -18,7 +22,7 @@ export function Header() {
         </div>
         <Link to="/checkout" id="cart">
           <ShoppingCart size={22} weight="fill" />
-          <span id="counter">3</span>
+          {!!total && <span id="counter">{total}</span>}
         </Link>
       </Actions>
     </Wrapper>

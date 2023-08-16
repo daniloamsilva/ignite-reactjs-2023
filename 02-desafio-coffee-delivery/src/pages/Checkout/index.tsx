@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { CurrencyDollar, MapPin, CreditCard, Bank, Money } from 'phosphor-react'
 
 import {
@@ -18,6 +18,10 @@ export function Checkout() {
   const handlePaymentChange = (value: string) => {
     setSelectedPayment(value)
   }
+
+  useEffect(() => {
+    scrollTo(0, 0)
+  })
 
   return (
     <Wrapper>
