@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState, useContext } from 'react'
 import { CurrencyDollar, MapPin, CreditCard, Bank, Money } from 'phosphor-react'
 
 import {
@@ -11,17 +11,15 @@ import {
 } from './styles'
 import { RadioButton } from '../../components/RadioButton'
 import { CoffeeCard } from '../../components/CoffeCard'
+import { CartContext } from '../../contexts/CartContext'
 
 export function Checkout() {
+  const { cart, getCoffeeById } = useContext(CartContext)
   const [selectedPayment, setSelectedPayment] = useState('')
 
   const handlePaymentChange = (value: string) => {
     setSelectedPayment(value)
   }
-
-  useEffect(() => {
-    scrollTo(0, 0)
-  })
 
   return (
     <Wrapper>
@@ -117,10 +115,17 @@ export function Checkout() {
         <h5>Cafés selecionados</h5>
 
         <div id="coffeeList">
-          <CoffeeCard.Cart />
-          <Divider />
-          <CoffeeCard.Cart />
-          <Divider />
+          {cart.map((coffee) => {
+            const coffeeData = getCoffeeById(coffee.id)
+            return coffeeData ? (
+              <>
+                <CoffeeCard.Cart key={coffee.id} coffee={coffeeData} />
+                <Divider />
+              </>
+            ) : (
+              <></>
+            )
+          })}
           <Results>
             <p>
               <span className="label">Total de itens</span>
@@ -136,7 +141,9 @@ export function Checkout() {
             </p>
           </Results>
 
-          <SubmitButton type="submit">Confirmar Pedido</SubmitButton>
+          <SubmitButton type="submit" disabled={!cart.length}>
+            Confirmar Pedido
+          </SubmitButton>
         </div>
       </SelectedCoffees>
     </Wrapper>

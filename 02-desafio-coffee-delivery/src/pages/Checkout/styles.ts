@@ -191,7 +191,11 @@ export const SubmitButton = styled.button`
   font-weight: 700;
   color: ${(props) => props.theme.white};
 
-  &:hover {
+  &:hover:not(:disabled) {
     background: ${(props) => props.theme['yellow-dark']};
+  }
+
+  &:disabled {
+    background: ${(props) => props.theme['yellow-light']};
   }
 `
