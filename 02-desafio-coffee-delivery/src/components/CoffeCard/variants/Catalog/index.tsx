@@ -1,6 +1,5 @@
-import { useContext } from 'react'
+import { useState, useContext } from 'react'
 import { ShoppingCart } from 'phosphor-react'
-import { Link } from 'react-router-dom'
 
 import { Wrapper, Details, Footer, Tags } from './styles'
 import { Counter } from '../../Counter'
@@ -12,9 +11,17 @@ interface CatalogProps {
 }
 
 export function Catalog({ coffee }: CatalogProps) {
-  const { cart } = useContext(CartContext)
+  const [quantity, setQuantity] = useState(0)
+  const { addCoffeeToCart } = useContext(CartContext)
 
-  const quantity = cart.find((item) => item.id === coffee.id)?.quantity
+  function handleQuantityChange(quantity: number) {
+    setQuantity(quantity)
+  }
+
+  function handleAddCoffeeToCart() {
+    addCoffeeToCart(coffee.id, quantity)
+    setQuantity(0)
+  }
 
   return (
     <Wrapper>
@@ -39,10 +46,18 @@ export function Catalog({ coffee }: CatalogProps) {
           </strong>
         </span>
         <div className="actions">
-          <Counter id={coffee.id} quantity={quantity ?? 0} />
-          <Link to="/checkout" id="cartButton">
+          <Counter
+            quantity={quantity}
+            onQuantityChange={handleQuantityChange}
+          />
+          <button
+            type="button"
+            id="cartButton"
+            disabled={!quantity}
+            onClick={handleAddCoffeeToCart}
+          >
             <ShoppingCart size={22} weight="fill" />
-          </Link>
+          </button>
         </div>
       </Footer>
     </Wrapper>

@@ -4,6 +4,7 @@ import { CartCoffee, CartReducer } from '../reducers/cart/reducer'
 import {
   incrementCoffeeToCartAction,
   decrementCoffeeToCartAction,
+  addCoffeeToCartAction,
   removeCoffeeFromCartAction,
 } from '../reducers/cart/actions'
 import { Coffee, coffees } from '../coffees'
@@ -12,6 +13,7 @@ interface CartContextData {
   cart: CartCoffee[]
   incrementCoffeeToCart: (id: number) => void
   decrementCoffeToCart: (id: number) => void
+  addCoffeeToCart: (id: number, quantity: number) => void
   removeCoffeeFromCart: (id: number) => void
   getCoffeeById: (id: number) => Coffee | undefined
   getTotalPrice: () => number
@@ -34,6 +36,10 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
     dispatch(decrementCoffeeToCartAction(id))
   }
 
+  function addCoffeeToCart(id: number, quantity: number) {
+    dispatch(addCoffeeToCartAction(id, quantity))
+  }
+
   function removeCoffeeFromCart(id: number) {
     dispatch(removeCoffeeFromCartAction(id))
   }
@@ -53,6 +59,7 @@ export function CartContextProvider({ children }: CartContextProviderProps) {
     cart: cartCoffees,
     incrementCoffeeToCart,
     decrementCoffeToCart,
+    addCoffeeToCart,
     removeCoffeeFromCart,
     getCoffeeById,
     getTotalPrice,

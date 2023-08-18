@@ -1,25 +1,19 @@
-import { useContext } from 'react'
 import { Wrapper } from './styles'
 import { Minus, Plus } from 'phosphor-react'
 
-import { CartContext } from '../../../contexts/CartContext'
-
 interface CounterProps {
-  id: number
   quantity: number
+  onQuantityChange: (quantity: number) => void
 }
 
-export function Counter({ id, quantity }: CounterProps) {
-  const { incrementCoffeeToCart, decrementCoffeToCart } =
-    useContext(CartContext)
-
+export function Counter({ quantity, onQuantityChange }: CounterProps) {
   return (
     <Wrapper>
-      <button type="button" onClick={() => decrementCoffeToCart(id)}>
+      <button type="button" onClick={() => onQuantityChange(quantity - 1)}>
         <Minus size={15} />
       </button>
       <span>{quantity}</span>
-      <button type="button" onClick={() => incrementCoffeeToCart(id)}>
+      <button type="button" onClick={() => onQuantityChange(quantity + 1)}>
         <Plus size={15} />
       </button>
     </Wrapper>

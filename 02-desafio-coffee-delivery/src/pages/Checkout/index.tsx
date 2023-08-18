@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react'
+import React, { useState, useContext } from 'react'
 import { CurrencyDollar, MapPin, CreditCard, Bank, Money } from 'phosphor-react'
 
 import {
@@ -118,10 +118,10 @@ export function Checkout() {
           {cart.map((coffee) => {
             const coffeeData = getCoffeeById(coffee.id)
             return coffeeData ? (
-              <>
+              <React.Fragment key={coffee.id}>
                 <CoffeeCard.Cart key={coffee.id} coffee={coffeeData} />
                 <Divider />
-              </>
+              </React.Fragment>
             ) : (
               <></>
             )
