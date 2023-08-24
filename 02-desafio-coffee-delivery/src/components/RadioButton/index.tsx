@@ -1,12 +1,19 @@
+import { PaymentMethods } from '../../reducers/delivery/reducer'
 import { Wrapper } from './styles'
 
 interface RadioButtonProps {
-  label: string
+  label: PaymentMethods
   name: string
   htmlFor: string
   icon: React.ReactNode
-  selected: string
-  onChange: (value: string) => void
+  selected: string | null
+  onChange: (value: PaymentMethods) => void
+}
+
+const labels = {
+  creditCard: 'Cartão de crédito',
+  debitCard: 'Cartão de débito',
+  cash: 'Dinheiro',
 }
 
 export function RadioButton({
@@ -34,7 +41,7 @@ export function RadioButton({
         required
       />
       {icon}
-      <span>{label}</span>
+      <span>{labels[label]}</span>
     </Wrapper>
   )
 }

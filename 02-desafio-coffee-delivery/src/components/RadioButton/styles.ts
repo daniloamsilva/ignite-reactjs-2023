@@ -36,5 +36,6 @@ export const Wrapper = styled.label<ContainerProps>`
   span {
     font-size: 0.65rem;
     line-height: 160%;
+    text-transform: uppercase;
   }
 `

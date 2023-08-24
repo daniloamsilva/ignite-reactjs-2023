@@ -4,14 +4,14 @@ import { RouterProvider } from 'react-router-dom'
 import { GlobalStyle } from './styles/global'
 import { theme } from './styles/theme'
 import { Router } from './Router'
-import { CartContextProvider } from './contexts/CartContext'
+import { ContextsProvider } from './contexts/Provider'
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <CartContextProvider>
+      <ContextsProvider>
         <RouterProvider router={Router} />
-      </CartContextProvider>
+      </ContextsProvider>
 
       <GlobalStyle />
     </ThemeProvider>
