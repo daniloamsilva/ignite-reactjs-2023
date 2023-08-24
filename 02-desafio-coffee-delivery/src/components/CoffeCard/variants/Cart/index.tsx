@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { Trash } from 'phosphor-react'
 
 import { Counter } from '../../Counter'
@@ -11,9 +11,27 @@ interface CartProps {
 }
 
 export function Cart({ coffee }: CartProps) {
-  const { cart, removeCoffeeFromCart } = useContext(CartContext)
+  const {
+    cart,
+    removeCoffeeFromCart,
+    decrementCoffeToCart,
+    incrementCoffeeToCart,
+  } = useContext(CartContext)
+  const [quantity, setQuantity] = useState(
+    cart.find((item) => item.id === coffee.id)?.quantity ?? 0,
+  )
 
-  const quantity = cart.find((item) => item.id === coffee.id)?.quantity
+  function handleQuantityChange(newQuantity: number) {
+    if (newQuantity === 0) {
+      removeCoffeeFromCart(coffee.id)
+      return
+    }
+
+    if (newQuantity < quantity) decrementCoffeToCart(coffee.id)
+    else if (newQuantity > quantity) incrementCoffeeToCart(coffee.id)
+
+    setQuantity(newQuantity)
+  }
 
   return (
     <Wrapper>
@@ -22,7 +40,10 @@ export function Cart({ coffee }: CartProps) {
         <div id="details">
           <span id="name">{coffee.name}</span>
           <div id="actions">
-            <Counter id={coffee.id} quantity={quantity ?? 0} />
+            <Counter
+              quantity={quantity ?? 0}
+              onQuantityChange={handleQuantityChange}
+            />
             <RemoveButton
               type="button"
               onClick={() => removeCoffeeFromCart(coffee.id)}

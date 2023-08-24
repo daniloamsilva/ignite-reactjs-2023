@@ -17,6 +17,15 @@ export function Checkout() {
   const { cart, getCoffeeById } = useContext(CartContext)
   const [selectedPayment, setSelectedPayment] = useState('')
 
+  const deliveryFee = 3.5
+  const coffeeTotal = cart.reduce((acc, coffee) => {
+    const coffeeData = getCoffeeById(coffee.id)
+    if (!coffeeData) return acc
+
+    return acc + coffeeData.price * coffee.quantity
+  }, 0)
+  const total = coffeeTotal + deliveryFee
+
   const handlePaymentChange = (value: string) => {
     setSelectedPayment(value)
   }
@@ -129,15 +138,38 @@ export function Checkout() {
           <Results>
             <p>
               <span className="label">Total de itens</span>
-              <span>R$ 29,70</span>
+              <span>
+                {coffeeTotal.toLocaleString('pt-br', {
+                  style: 'currency',
+                  currency: 'BRL',
+                })}
+              </span>
             </p>
             <p>
               <span className="label">Entrega</span>
-              <span>R$ 3,50</span>
+              {cart.length ? (
+                <span>
+                  {deliveryFee.toLocaleString('pt-br', {
+                    style: 'currency',
+                    currency: 'BRL',
+                  })}
+                </span>
+              ) : (
+                <span>R$ 0,00</span>
+              )}
             </p>
             <p className="total">
               <span className="label">Total</span>
-              <span className="value">R$ 33,20</span>
+              <span className="value">
+                {cart.length ? (
+                  total.toLocaleString('pr-br', {
+                    style: 'currency',
+                    currency: 'BRL',
+                  })
+                ) : (
+                  <span>R$ 0,00</span>
+                )}
+              </span>
             </p>
           </Results>
 
