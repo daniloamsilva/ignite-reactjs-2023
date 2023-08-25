@@ -19,7 +19,7 @@ import { PaymentMethods } from '../../reducers/delivery/reducer'
 export function Cart() {
   const navigate = useNavigate()
   const { cart, getCoffeeById, resetCart } = useContext(CartContext)
-  const { setDeliveryAddress, changePaymentMethod } =
+  const { setDeliveryAddress, changePaymentMethod, paymentMethod } =
     useContext(DeliveryContext)
 
   const [cep, setCep] = useState('')
@@ -29,9 +29,6 @@ export function Cart() {
   const [neighborhood, setNeighborhood] = useState('')
   const [city, setCity] = useState('')
   const [uf, setUf] = useState('')
-  const [paymentMethod, setPaymentMethod] = useState<PaymentMethods | null>(
-    null,
-  )
 
   const deliveryFee = 3.5
   const coffeeTotal = cart.reduce((acc, coffee) => {
@@ -43,7 +40,7 @@ export function Cart() {
   const total = coffeeTotal + deliveryFee
 
   const handlePaymentChange = (value: PaymentMethods) => {
-    setPaymentMethod(value)
+    changePaymentMethod(value)
   }
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {

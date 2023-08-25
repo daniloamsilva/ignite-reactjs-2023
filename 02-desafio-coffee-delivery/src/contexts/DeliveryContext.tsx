@@ -7,12 +7,12 @@ import {
 } from '../reducers/delivery/reducer'
 import {
   setDeliveryAddressAction,
-  setPaymentMethodAction,
+  changePaymentMethodAction,
 } from '../reducers/delivery/actions'
 
 interface DeliveryContextData {
   deliveryAddress?: DeliveryAddress
-  paymentMethod?: PaymentMethods | null
+  paymentMethod?: PaymentMethods
   setDeliveryAddress: (address: DeliveryAddress) => void
   changePaymentMethod: (paymentMethod: PaymentMethods) => void
 }
@@ -33,7 +33,7 @@ export function DeliveryContextProvider({
   }
 
   function changePaymentMethod(paymentMethod: PaymentMethods) {
-    dispatch(setPaymentMethodAction(paymentMethod))
+    dispatch(changePaymentMethodAction(paymentMethod))
   }
 
   const initialValue = {

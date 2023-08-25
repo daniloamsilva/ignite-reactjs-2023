@@ -9,7 +9,7 @@ interface RadioButtonProps {
   name: string
   htmlFor: string
   icon: React.ReactNode
-  selected: string | null
+  selected?: PaymentMethods
   onChange: (value: PaymentMethods) => void
 }
 

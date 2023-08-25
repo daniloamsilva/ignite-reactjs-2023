@@ -40,7 +40,7 @@ export function DeliveryReducer(state: InitialState, action: Action) {
     case DeliveryActions.SET_DELIVERY_ADDRESS: {
       return { ...state, deliveryAddress: action.payload.deliveryAddress }
     }
-    case DeliveryActions.SET_PAYMENT_METHOD: {
+    case DeliveryActions.CHANGE_PAYMENT_METHOD: {
       return { ...state, paymentMethod: action.payload.paymentMethod }
     }
     default:

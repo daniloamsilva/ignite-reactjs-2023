@@ -2,7 +2,7 @@ import { DeliveryAddress, PaymentMethods } from './reducer'
 
 export enum DeliveryActions {
   SET_DELIVERY_ADDRESS = 'SET_DELIVERY_ADDRESS',
-  SET_PAYMENT_METHOD = 'SET_PAYMENT_METHOD',
+  CHANGE_PAYMENT_METHOD = 'CHANGE_PAYMENT_METHOD',
 }
 
 export function setDeliveryAddressAction(deliveryAddress: DeliveryAddress) {
@@ -12,9 +12,9 @@ export function setDeliveryAddressAction(deliveryAddress: DeliveryAddress) {
   }
 }
 
-export function setPaymentMethodAction(paymentMethod: PaymentMethods) {
+export function changePaymentMethodAction(paymentMethod: PaymentMethods) {
   return {
-    type: DeliveryActions.SET_PAYMENT_METHOD,
+    type: DeliveryActions.CHANGE_PAYMENT_METHOD,
     payload: { paymentMethod },
   }
 }
