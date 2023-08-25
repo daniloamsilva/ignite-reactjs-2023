@@ -16,7 +16,7 @@ import { CartContext } from '../../contexts/CartContext'
 import { DeliveryContext } from '../../contexts/DeliveryContext'
 import { PaymentMethods } from '../../reducers/delivery/reducer'
 
-export function Checkout() {
+export function Cart() {
   const navigate = useNavigate()
   const { cart, getCoffeeById, resetCart } = useContext(CartContext)
   const { setDeliveryAddress, changePaymentMethod } =
