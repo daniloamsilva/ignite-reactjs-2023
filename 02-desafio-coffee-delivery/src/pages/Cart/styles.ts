@@ -40,7 +40,8 @@ export const FormOrder = styled.div`
       gap: 1rem;
       align-self: stretch;
 
-      input {
+      input,
+      select {
         border-radius: 0.25rem;
         border: 1px solid ${(props) => props.theme['base-button']};
         background: ${(props) => props.theme['base-input']};
