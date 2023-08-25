@@ -1,5 +1,6 @@
 import { useState, useContext } from 'react'
 import { ShoppingCart } from 'phosphor-react'
+import { toast } from 'react-toastify'
 
 import { Wrapper, Details, Footer, Tags } from './styles'
 import { Counter } from '../../Counter'
@@ -21,6 +22,8 @@ export function Catalog({ coffee }: CatalogProps) {
   function handleAddCoffeeToCart() {
     addCoffeeToCart(coffee.id, quantity)
     setQuantity(0)
+
+    toast.success(`Café adicionado ao carrinho!`)
   }
 
   return (
