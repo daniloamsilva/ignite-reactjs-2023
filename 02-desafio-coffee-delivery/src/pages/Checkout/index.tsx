@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react'
 import { CurrencyDollar, MapPin, CreditCard, Bank, Money } from 'phosphor-react'
+import { useNavigate } from 'react-router-dom'
 
 import {
   Wrapper,
@@ -16,7 +17,8 @@ import { DeliveryContext } from '../../contexts/DeliveryContext'
 import { PaymentMethods } from '../../reducers/delivery/reducer'
 
 export function Checkout() {
-  const { cart, getCoffeeById } = useContext(CartContext)
+  const navigate = useNavigate()
+  const { cart, getCoffeeById, resetCart } = useContext(CartContext)
   const { setDeliveryAddress, changePaymentMethod } =
     useContext(DeliveryContext)
 
@@ -59,6 +61,8 @@ export function Checkout() {
 
     setDeliveryAddress(address)
     changePaymentMethod(paymentMethod as PaymentMethods)
+    resetCart()
+    navigate('/success')
   }
 
   return (

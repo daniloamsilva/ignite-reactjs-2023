@@ -11,6 +11,8 @@ import {
 } from '../reducers/delivery/actions'
 
 interface DeliveryContextData {
+  deliveryAddress?: DeliveryAddress
+  paymentMethod?: PaymentMethods | null
   setDeliveryAddress: (address: DeliveryAddress) => void
   changePaymentMethod: (paymentMethod: PaymentMethods) => void
 }
@@ -24,18 +26,19 @@ export const DeliveryContext = createContext({} as DeliveryContextData)
 export function DeliveryContextProvider({
   children,
 }: DeliveryContextProviderProps) {
-  const [, dispatch] = useReducer(DeliveryReducer, {})
+  const [state, dispatch] = useReducer(DeliveryReducer, {})
 
   function setDeliveryAddress(address: DeliveryAddress) {
     dispatch(setDeliveryAddressAction(address))
   }
 
   function changePaymentMethod(paymentMethod: PaymentMethods) {
-    console.log(paymentMethod)
     dispatch(setPaymentMethodAction(paymentMethod))
   }
 
   const initialValue = {
+    deliveryAddress: state.deliveryAddress,
+    paymentMethod: state.paymentMethod,
     setDeliveryAddress,
     changePaymentMethod,
   }

@@ -3,6 +3,7 @@ export enum CartActions {
   DECREMENT_COFFEE_FROM_CART = 'DECREMENT_COFFEE_FROM_CART',
   ADD_COFFEE_TO_CART = 'ADD_COFFEE_TO_CART',
   REMOVE_COFFEE_FROM_CART = 'REMOVE_COFFEE_FROM_CART',
+  RESET_CART = 'RESET_CART',
 }
 
 export function incrementCoffeeToCartAction(id: number) {
@@ -30,5 +31,12 @@ export function removeCoffeeFromCartAction(id: number) {
   return {
     type: CartActions.REMOVE_COFFEE_FROM_CART,
     payload: { id },
+  }
+}
+
+export function resetCartAction() {
+  return {
+    type: CartActions.RESET_CART,
+    payload: { id: 0 },
   }
 }

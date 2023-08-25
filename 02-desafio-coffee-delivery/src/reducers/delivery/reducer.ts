@@ -6,6 +6,12 @@ export enum PaymentMethods {
   CASH = 'cash',
 }
 
+export enum PaymentMethodsLabels {
+  creditCard = 'Cartão de crédito',
+  debitCard = 'Cartão de débito',
+  cash = 'Dinheiro',
+}
+
 export interface DeliveryAddress {
   cep: string
   street: string
@@ -32,11 +38,9 @@ interface Action {
 export function DeliveryReducer(state: InitialState, action: Action) {
   switch (action.type) {
     case DeliveryActions.SET_DELIVERY_ADDRESS: {
-      console.log(action.payload.deliveryAddress)
       return { ...state, deliveryAddress: action.payload.deliveryAddress }
     }
     case DeliveryActions.SET_PAYMENT_METHOD: {
-      console.log(action.payload.paymentMethod)
       return { ...state, paymentMethod: action.payload.paymentMethod }
     }
     default:

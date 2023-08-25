@@ -67,6 +67,9 @@ export function CartReducer(state: CartCoffee[], action: Action) {
     case CartActions.REMOVE_COFFEE_FROM_CART: {
       return state.filter((coffee) => coffee.id !== action.payload.id)
     }
+    case CartActions.RESET_CART: {
+      return []
+    }
     default:
       return state
   }

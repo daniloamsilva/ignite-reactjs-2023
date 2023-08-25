@@ -1,10 +1,24 @@
+import { useContext, useEffect } from 'react'
 import { MapPin, Timer, CurrencyDollar } from 'phosphor-react'
+import { useNavigate } from 'react-router-dom'
 
 import { Wrapper, Header, OrderInfo, Section } from './styles'
 import DeliveryImage from '../../assets/delivery.png'
 import { Badge } from '../../components/Badge'
+import { DeliveryContext } from '../../contexts/DeliveryContext'
+import { PaymentMethodsLabels } from '../../reducers/delivery/reducer'
 
 export function Success() {
+  const navigate = useNavigate()
+  const { deliveryAddress: address, paymentMethod } =
+    useContext(DeliveryContext)
+
+  useEffect(() => {
+    if (!address || !paymentMethod) {
+      navigate('/')
+    }
+  }, [address, navigate, paymentMethod])
+
   return (
     <Wrapper>
       <Header>
@@ -22,9 +36,10 @@ export function Success() {
               </Badge.Icon>
               <Badge.Infos>
                 <p>
-                  Entrega em <strong>Rua João Daniel Martinelli, 102</strong>
+                  Entrega em{' '}
+                  <strong>{`${address?.street}, ${address?.number} ${address?.complement}`}</strong>
                 </p>
-                <p>Farrapos - Porto Alegre, RS</p>
+                <p>{`${address?.neighborhood} - ${address?.city}, ${address?.uf}`}</p>
               </Badge.Infos>
             </Badge.Container>
             <Badge.Container>
@@ -45,7 +60,9 @@ export function Success() {
               <Badge.Infos>
                 <p>Pagamento na entrega</p>
                 <p>
-                  <strong>Cartão de Crédito</strong>
+                  <strong>
+                    {!!paymentMethod && PaymentMethodsLabels[paymentMethod]}
+                  </strong>
                 </p>
               </Badge.Infos>
             </Badge.Container>
