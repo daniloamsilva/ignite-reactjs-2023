@@ -9,7 +9,10 @@ interface CounterProps {
 export function Counter({ quantity, onQuantityChange }: CounterProps) {
   return (
     <Wrapper>
-      <button type="button" onClick={() => onQuantityChange(quantity - 1)}>
+      <button
+        type="button"
+        onClick={() => onQuantityChange(quantity > 0 ? quantity - 1 : 0)}
+      >
         <Minus size={15} />
       </button>
       <span>{quantity}</span>
