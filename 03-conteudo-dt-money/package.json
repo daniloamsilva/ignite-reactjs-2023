@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "dev:server": "json-server --watch server.json --port 3333 --delay 1000",
+    "dev:server": "json-server --watch server.json --port 3333 --delay 500",
     "build": "tsc && vite build",
     "lint:fix": "eslint src --ext .ts,.tsx --fix",
     "preview": "vite preview"
